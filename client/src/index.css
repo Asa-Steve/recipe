@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  max-width: 1280px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.container {
+  /* border: 1px solid; */
+  padding-inline: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: #001122;
+  transition: all 0.3s;
+}
+
+a:hover {
+  color: #41893d;
+}

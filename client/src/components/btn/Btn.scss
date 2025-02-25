@@ -1,0 +1,28 @@
+button {
+  width: 200px;
+  height: 35px;
+  background-color: #41893D;;
+  color: white;
+  border: none;
+  // border-radius: 5px;
+  font-size: 1rem;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: transparent;
+    border: 1px solid #001122;
+    color: #001122;
+  }
+
+  &.secondary {
+    color: #001122;
+    border: 1px solid;
+    background-color: transparent;
+
+    &:hover {
+      background-color: #001122;
+      color: white;
+    }
+  }
+}
