@@ -1,3 +1,5 @@
+@import "../../responsive.scss";
+
 header {
   height: 60px;
   padding-inline: 1rem;
@@ -10,6 +12,8 @@ header {
 
     .logo {
       width: 20%;
+      position: relative;
+      z-index: 200;
 
       img {
         width: 80%;
@@ -24,7 +28,7 @@ header {
       justify-content: center;
 
       a {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
         padding: 0.2rem 1rem;
         text-decoration: none;
         color: #001122;
@@ -45,13 +49,137 @@ header {
         padding-left: 1rem;
         border: 1px solid rgba(128, 128, 128, 0.237);
         border-radius: 5px;
-        transition: all .3s ;
+        transition: all 0.3s;
 
         &:focus {
           outline: none;
-          border: 1px solid #41893D;
+          border: 1px solid #41893d;
         }
       }
+    }
+  }
+
+  nav.mb_nav {
+    display: none;
+    border: 1px solid;
+    width: 50px;
+    place-content: center;
+    // position: relative;
+    overflow: hidden;
+
+    .toggler_mb {
+      height: 20px;
+      width: 30px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+      span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #213547;
+        transition: all 0.3s ease;
+      }
+      &.active span {
+        &:first-of-type {
+          margin-left: 1rem;
+          width: 80%;
+        }
+        &:nth-of-type(2) {
+          width: 50%;
+        }
+        &:last-of-type {
+          margin-right: 1rem;
+          width: 80%;
+        }
+      }
+    }
+    .nav_links_mb {
+      border: 1px solid;
+      height: 100vh;
+      left: 0;
+      right: 0;
+      top: 0;
+      position: fixed;
+      background-color: rgba(0, 17, 34, 0.379);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      place-content: center;
+      justify-content: center;
+      gap: 30px;
+      transform: translateX(140%);
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.3s;
+      backdrop-filter: blur(15px);
+
+      a {
+        display: block;
+        text-align: center;
+        font-size: 1.3rem;
+        padding: 1rem 0;
+        color: white;
+        font-weight: bold;
+      }
+      .close {
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &.show {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// Responsiveness
+@include md {
+  header {
+    nav {
+      .logo {
+        img {
+          width: 100%;
+        }
+      }
+      .nav_links {
+        width: 40%;
+        a {
+          padding: 0.2rem;
+        }
+      }
+    }
+  }
+}
+@include sm {
+  header {
+    border: 2px solid;
+    display: flex;
+    justify-content: space-between;
+    nav:not(.mb_nav) {
+      .logo {
+        width: 50%;
+        border: 1px solid red;
+      }
+      .nav_links,
+      .search_bar {
+        display: none;
+      }
+    }
+    nav.mb_nav {
+      display: block;
     }
   }
 }

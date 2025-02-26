@@ -1,9 +1,12 @@
+@import "../../responsive.scss";
+
 .details {
   .breadcrumb {
     padding: 1rem 0;
+    color: rgba(128, 128, 128, 0.726);
   }
   .main_section {
-    height: 80vh;
+    height: 70vh;
     display: flex;
     position: relative;
     overflow: auto;
@@ -11,12 +14,13 @@
     scrollbar-width: none;
 
     .left {
-      width: 30%;
-      height: 500px;
+      width: 40%;
+      // height: 500px;
+      height: 100%;
       position: sticky;
       top: 0;
 
-      img{
+      img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -33,6 +37,7 @@
         h1 {
           font-size: 2.5rem;
         }
+
         .tag {
           display: flex;
           align-items: center;
@@ -43,6 +48,10 @@
             height: 20px;
           }
         }
+      }
+      p {
+        line-height: 1.5;
+        white-space: pre-wrap;
       }
       .ingredients {
         li {
@@ -62,6 +71,56 @@
       }
       h3 {
         margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+// Responsiveness
+@include sm {
+  .details {
+    .main_section {
+      flex-direction: column;
+      height: 79vh;
+      justify-content: space-between;
+      .left {
+        width: 100%;
+        height: 300px;
+      }
+      .right {
+        width: 100%;
+        padding: 0;
+        height: 360px;
+        overflow-y: auto;
+
+        .recipe_title {
+          h1 {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include xsm {
+  .details {
+    .container {
+      padding: 0 1rem;
+
+      .main_section {
+        .left {
+          height: 200px;
+        }
+        .right {
+          height: 420px;
+
+          .recipe_title {
+            h1 {
+              font-size: 1.8rem;
+            }
+          }
+        }
       }
     }
   }
