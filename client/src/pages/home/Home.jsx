@@ -61,7 +61,7 @@ const latestRecipes = [
 ];
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
-  const [meals, setMeals] = useState([]);
+  const [meals, setMeals] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -74,7 +74,7 @@ const Home = () => {
         setMeals(data.meals);
         setLoading(false);
       } catch (error) {
-        console.log(error);
+        console.log("error : ", error);
         setLoading(false);
       }
     };
@@ -143,7 +143,7 @@ const Home = () => {
           </div>
         </section>
         <section className="latest latest_recipes">
-          {typeof meals === "object" && (
+          {meals != undefined && (
             <div className="container">
               <div className="top_wrap">
                 <h2>Latest Recipes</h2>
@@ -287,7 +287,9 @@ const Home = () => {
                 Tempore, illo.
               </p>
               <Link>
-                <Btn text={"Submit Recipe"} />
+                <Link to={"/submit"}>
+                  <Btn text={"Submit Recipe"} />
+                </Link>
               </Link>
             </div>
           </div>

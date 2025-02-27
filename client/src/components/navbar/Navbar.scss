@@ -61,10 +61,8 @@ header {
 
   nav.mb_nav {
     display: none;
-    border: 1px solid;
     width: 50px;
     place-content: center;
-    // position: relative;
     overflow: hidden;
 
     .toggler_mb {
@@ -98,7 +96,6 @@ header {
       }
     }
     .nav_links_mb {
-      border: 1px solid;
       height: 100vh;
       left: 0;
       right: 0;
@@ -165,13 +162,11 @@ header {
 }
 @include sm {
   header {
-    border: 2px solid;
     display: flex;
     justify-content: space-between;
     nav:not(.mb_nav) {
       .logo {
         width: 50%;
-        border: 1px solid red;
       }
       .nav_links,
       .search_bar {

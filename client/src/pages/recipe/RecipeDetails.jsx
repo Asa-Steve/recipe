@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import "./RecipeDetails.scss";
 import { Link, useLocation, useParams } from "react-router-dom";
+import "./RecipeDetails.scss";
 import Loader from "../../components/loader/Loader";
 
 const RecipeDetails = () => {
@@ -25,10 +25,6 @@ const RecipeDetails = () => {
     };
     fetchMeal();
   }, []);
-
-  useEffect(() => {
-    console.log(meal);
-  }, [meal]);
 
   {
     return loading ? (
@@ -75,7 +71,7 @@ const RecipeDetails = () => {
                       .map(
                         (_, i) =>
                           meal[`strIngredient${i}`] && (
-                            <li>
+                            <li key={i}>
                               ✓ &nbsp;
                               {meal[`strMeasure${i}`]} of{" "}
                               {meal[`strIngredient${i}`]}
