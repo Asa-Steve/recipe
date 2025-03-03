@@ -9,6 +9,9 @@ const recipeSchema = require("./Models/recipeSchema");
 const app = express();
 const PORT = 3000;
 
+// Routes
+const recipeRoute = require("./routes/recipeRoute");
+
 const cors = require("cors");
 const mongoose = require("mongoose");
 
@@ -22,14 +25,10 @@ app.use(
   })
 );
 
-// MongoDB Connection (Optional)
-// mongoose
-//   .connect("mongodb://127.0.0.1:27017/Recipe")
-//   .then(() => console.log("MongoDB Connected"))
-//   .catch((err) => console.error(err));
+app.use("/", recipeRoutes);
 
-app.get("/", (req, res) => {
-  res.status(200).json("server up and running");
+app.get("*", (req, res) => {
+  res.status(404).json("Page Not Found");
 });
 
 app.listen(PORT, () => console.log(`server is up and running on port ${PORT}`));
