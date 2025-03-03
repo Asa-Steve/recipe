@@ -118,14 +118,15 @@ const Home = () => {
               </div>
             </div>
             <div className="right">
-              {/* <img src="./imgs/hero-image.png" alt="hero-image" /> */}
               <img
                 className={currentImage ? "show" : null}
                 src={`../imgs/img/right side/b3.png`}
+                alt="hero-img"
               />
               <img
                 className={!currentImage ? "show" : null}
                 src={`../imgs/img/right side/b4.png`}
+                alt="hero-img"
               />
             </div>
           </div>
@@ -286,10 +287,8 @@ const Home = () => {
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Tempore, illo.
               </p>
-              <Link>
-                <Link to={"/submit"}>
-                  <Btn text={"Submit Recipe"} />
-                </Link>
+              <Link to={"/submit"}>
+                <Btn text={"Submit Recipe"} />
               </Link>
             </div>
           </div>

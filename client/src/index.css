@@ -8,7 +8,20 @@
   /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   /* font-family: "Dancing Script"; */
   font-family: Poppins;
+
+  cursor: url("/imgs/carrot_1.PNG"), auto;
 }
+
+button {
+  cursor: url("/imgs/carrot_1.PNG"), auto !important;
+}
+
+body {
+  cursor: url("/imgs/carrot_1.PNG"), auto;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
 body.no-scroll {
   height: 100vh;
   overflow: hidden;

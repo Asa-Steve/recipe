@@ -1,8 +1,10 @@
 import "./Submit.scss";
 import Btn from "../../components/btn/Btn";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Loader from "../../components/loader/Loader";
 const Submit = () => {
   const [ingredient, setIngredient] = useState([]);
+  const [loading, setLoading] = useState(true);
   const ingRef = useRef();
   const [formData, setFormData] = useState({
     recipeName: "",
@@ -11,6 +13,19 @@ const Submit = () => {
     category: "Nigerian",
     image: "",
   });
+
+  useEffect(() => {
+    const handleLoad = () => setLoading(false);
+
+    window.addEventListener("load", handleLoad);
+
+    const timeout = setTimeout(() => setLoading(false), 1000); // Auto-hide after 0.5s
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+      clearTimeout(timeout);
+    };
+  }, []);
 
   const addIngredient = (e) => {
     e.preventDefault();
@@ -39,11 +54,12 @@ const Submit = () => {
     e.preventDefault();
     const payload = { ...formData, ingredient };
 
-    
     console.log(payload);
   };
 
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <>
       <section className="submit">
         <div className="container">

@@ -1,0 +1,246 @@
+@import "../../responsive.scss";
+
+.contact {
+  height: 81vh;
+  padding: 1rem 0;
+
+  .container {
+    height: 100%;
+    place-content: center;
+  }
+
+  h1 {
+    height: 50px;
+    text-align: center;
+    font-size: 2rem;
+  }
+  .form_section {
+    // height: calc(100% - 50px);
+    height: fit-content;
+    // padding: 1rem 0 ;
+
+    display: flex;
+    flex-direction: row-reverse;
+
+    .left {
+      width: 50%;
+      padding: 1rem 0;
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+
+        .row {
+          padding: 0.3rem;
+          label {
+            display: block;
+            margin-bottom: 5px;
+          }
+          input {
+            height: 30px;
+            width: 90%;
+          }
+          input,
+          textarea {
+            border-radius: 0%;
+            border: 1px solid rgba(0, 0, 0, 0.339);
+            padding: 0.5rem;
+            &:focus {
+              outline: none;
+              border: 1px solid #41893d;
+            }
+          }
+          textarea {
+            width: 90%;
+            height: 150px;
+            resize: none;
+          }
+        }
+        button {
+          margin-left: 0.3rem;
+          margin-top: 0.3rem;
+        }
+      }
+    }
+    .right {
+      position: relative;
+      width: 50%;
+      display: flex;
+      justify-content: center;
+
+      .blob {
+        // border: 1px solid;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        border-radius: 50%;
+        background-color: #41893d;
+        background-position: top;
+        background-repeat: no-repeat;
+
+        &:first-of-type {
+          right: 90px;
+          top: 120px;
+          background: url("../imgs/pot_1.svg");
+          background-size: cover;
+        }
+
+        &:nth-of-type(2) {
+          bottom: 80px;
+          left: 9px;
+          background: url("../imgs/pot.svg");
+          background-size: cover;
+        }
+
+        &:nth-of-type(3) {
+          top: 40px;
+          left: 100px;
+          background: url("../imgs/pan_1.svg");
+          background-size: cover;
+        }
+        &:nth-of-type(4) {
+          bottom: 40px;
+          right: 30px;
+          background: url("../imgs/tin.svg");
+          background-size: cover;
+        }
+      }
+      .img_wrap {
+        height: 200px;
+        width: 200px;
+        border: 10px solid;
+        background-color: #41893d;
+        border-radius: 50%;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 1px; /* Adjust thickness */
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+          object-position: bottom;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          //   bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+// Responsiveness
+
+@include md {
+  .contact {
+    .container {
+      .form_section {
+        .right {
+          .img_wrap {
+            margin-top: 4.5rem;
+          }
+          .blob {
+            &:first-of-type {
+              right: 9px;
+              top: 30px;
+            }
+
+            &:nth-of-type(2) {
+              bottom: 80px;
+              left: 9px;
+            }
+
+            &:nth-of-type(3) {
+              top: 40px;
+              left: 10px;
+            }
+            &:nth-of-type(4) {
+              bottom: 140px;
+              right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include sm {
+  .contact {
+    .container {
+      height: fit-content;
+      padding-block: 1rem;
+      .form_section {
+        flex-direction: column-reverse;
+
+        .right,
+        .left {
+          width: 100%;
+        }
+
+        .right {
+          .blob {
+            &:first-of-type {
+              right: 130px;
+              top: 30px;
+            }
+
+            &:nth-of-type(2) {
+              bottom: 30px;
+              left: 40px;
+            }
+
+            &:nth-of-type(3) {
+              top: 40px;
+              left: 100px;
+            }
+            &:nth-of-type(4) {
+              bottom: 40px;
+              right: 90px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include xsm {
+  .contact {
+    .container {
+      .form_section {
+
+        .right {
+          .blob {
+            &:first-of-type {
+              right:50px;
+              top: 30px;
+            }
+
+            &:nth-of-type(2) {
+              bottom: 30px;
+              left: 0px;
+            }
+
+            &:nth-of-type(3) {
+              top: 40px;
+              left: 40px;
+            }
+            &:nth-of-type(4) {
+              bottom: 40px;
+              right: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

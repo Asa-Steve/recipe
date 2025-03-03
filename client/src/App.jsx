@@ -6,6 +6,7 @@ import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import RecipeDetails from "./pages/recipe/RecipeDetails";
 import Submit from "./pages/submit/Submit";
+import Contact from "./pages/contact/Contact";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="submit" element={<Submit />} />
+          <Route path="contact" element={<Contact />} />
           <Route path="recipe/:recipeId" element={<RecipeDetails />} />
         </Route>
       </Routes>

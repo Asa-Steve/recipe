@@ -23,6 +23,8 @@ Thumbs.db
 .idea/
 *.swp
 
+.vite
+
 # Logs
 logs/
 *.log
