@@ -2,4 +2,8 @@ const getRecipes = () => {
   console.log("take all");
 };
 
-module.exports = { getRecipe };
+const addRecipe = (req,res)=>{
+    
+}
+
+module.exports = { getRecipes };

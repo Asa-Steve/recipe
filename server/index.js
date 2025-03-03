@@ -10,7 +10,7 @@ const app = express();
 const PORT = 3000;
 
 // Routes
-const recipeRoute = require("./routes/recipeRoute");
+const recipeRoutes = require("./routes/recipeRoute");
 
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -25,7 +25,7 @@ app.use(
   })
 );
 
-app.use("/", recipeRoutes);
+app.use("/recipe", recipeRoutes);
 
 app.get("*", (req, res) => {
   res.status(404).json("Page Not Found");
