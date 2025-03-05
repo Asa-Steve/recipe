@@ -120,12 +120,12 @@ const Home = () => {
             <div className="right">
               <img
                 className={currentImage ? "show" : null}
-                src={`../imgs/img/right side/b3.png`}
+                src={`../imgs/hero_1.webp`}
                 alt="hero-img"
               />
               <img
                 className={!currentImage ? "show" : null}
-                src={`../imgs/img/right side/b4.png`}
+                src={`../imgs/hero_2.webp`}
                 alt="hero-img"
               />
             </div>
