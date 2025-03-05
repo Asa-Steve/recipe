@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Navbar.scss";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
@@ -10,6 +10,10 @@ const Header = () => {
   }
 
   useEffect(() => {
+    !toggle
+      ? document.querySelector(".content").classList.add("pad")
+      : document.querySelector(".content").classList.remove("pad");
+
     toggle
       ? document.body.classList.add("no-scroll")
       : document.body.classList.remove("no-scroll");
@@ -21,15 +25,35 @@ const Header = () => {
       <header className={!toggle ? "fixed" : null}>
         <nav>
           <div className="logo">
-            <Link to="/">
+            <NavLink to="/">
               <img src="../imgs/logo.svg" alt="logo" />
-            </Link>
+            </NavLink>
           </div>
           <div className="nav_links">
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/submit">Submit</Link>
-            <Link to="/contact">Contact</Link>
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "active_link" : "")}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) => (isActive ? "active_link" : "")}
+            >
+              About
+            </NavLink>
+            <NavLink
+              to="/submit"
+              className={({ isActive }) => (isActive ? "active_link" : "")}
+            >
+              Submit
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) => (isActive ? "active_link" : "")}
+            >
+              Contact
+            </NavLink>
           </div>
 
           <div className="search_bar">
@@ -52,18 +76,34 @@ const Header = () => {
             <div className="close">
               <img src="../imgs/close.png" alt="close" onClick={handleToggle} />
             </div>
-            <Link to="/" onClick={handleToggle}>
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "active_link" : "")}
+              onClick={handleToggle}
+            >
               Home
-            </Link>
-            <Link to="/about" onClick={handleToggle}>
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) => (isActive ? "active_link" : "")}
+              onClick={handleToggle}
+            >
               About
-            </Link>
-            <Link to="/submit" onClick={handleToggle}>
+            </NavLink>
+            <NavLink
+              to="/submit"
+              className={({ isActive }) => (isActive ? "active_link" : "")}
+              onClick={handleToggle}
+            >
               Submit
-            </Link>
-            <Link to="/contact" onClick={handleToggle}>
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) => (isActive ? "active_link" : "")}
+              onClick={handleToggle}
+            >
               Contact
-            </Link>
+            </NavLink>
           </div>
         </nav>
       </header>

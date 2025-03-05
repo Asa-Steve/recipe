@@ -67,7 +67,11 @@ main {
   }
 }
 main .content {
-  margin-top: 60px; /*accounting for the header*/ 
+  /* margin-top: 60px; accounting for the header  */
+
+  &.pad {
+    margin-top: 60px;
+  }
 }
 input[type="search"]::-webkit-search-cancel-button {
   display: none;

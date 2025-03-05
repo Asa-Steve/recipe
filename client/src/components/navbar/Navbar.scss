@@ -45,6 +45,9 @@ header {
         &:hover {
           color: #00112261;
         }
+        &.active_link {
+          color: #41893d;
+        }
       }
     }
 
@@ -134,6 +137,10 @@ header {
         padding: 1rem 0;
         color: white;
         font-weight: bold;
+
+        &.active_link {
+          color: #41893d;
+        }
       }
       .close {
         height: 40px;
