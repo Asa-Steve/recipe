@@ -2,9 +2,9 @@ const express = require("express");
 require("dotenv").config(); // Load environment variables
 
 // MongoDB Connection
-const connectDB = require("./DB/db");
+const connectDB = require("./db/db");
 connectDB();
-const recipeSchema = require("./Models/recipeSchema");
+const recipeSchema = require("./models/recipeSchema");
 
 const app = express();
 const PORT = 3000;
@@ -13,7 +13,6 @@ const PORT = 3000;
 const recipeRoutes = require("./routes/recipeRoute");
 
 const cors = require("cors");
-const mongoose = require("mongoose");
 
 // Middleware
 app.use(express.json()); // Parse JSON requests
@@ -25,7 +24,9 @@ app.use(
   })
 );
 
-app.use("/recipe", recipeRoutes);
+app.use("/uploads", express.static("uploads")); // Serve uploaded images
+
+app.use("/api/v1/recipe", recipeRoutes);
 
 app.get("*", (req, res) => {
   res.status(404).json("Page Not Found");

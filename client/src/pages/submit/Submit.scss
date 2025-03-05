@@ -43,6 +43,7 @@
       textarea {
         border-radius: 0%;
         border: 1px solid rgba(0, 0, 0, 0.339);
+        padding: 0.5rem;
 
         &:focus {
           outline: none;
@@ -52,7 +53,7 @@
 
       select {
         width: 50%;
-        height: 30px;
+        height: 35px;
       }
       textarea {
         width: 90%;
@@ -110,16 +111,34 @@
 
 @include xsm {
   .submit {
+    height: fit-content;
     .container {
       padding: 0;
 
       .txt_wrap {
         padding: 1rem;
-        height: 150px;
+        height: fit-content;
       }
       .form_section {
         width: 100%;
-        height: calc(80vh - 150px);
+        height: fit-content;
+
+        form {
+          padding: 1rem 0.5rem;
+
+          .row {
+            padding: 0.3rem;
+          }
+          input,
+          select,
+          textarea {
+            width: 100%;
+          }
+        }
+        .row + button {
+          width: 97%;
+          margin-left: 0.4rem;
+        }
       }
     }
   }

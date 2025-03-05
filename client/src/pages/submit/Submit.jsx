@@ -30,6 +30,7 @@ const Submit = () => {
   const addIngredient = (e) => {
     e.preventDefault();
     const { value } = ingRef.current;
+    if (!value) return;
     setIngredient((prevIngredients) => [...prevIngredients, value]);
     ingRef.current.value = "";
   };
@@ -50,11 +51,23 @@ const Submit = () => {
         });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const payload = { ...formData, ingredient };
+    // const payload = { ...formData, ingredient };
 
-    console.log(payload);
+    // const payload = new FormData();
+    // payload.append("recipeName", formData.recipeName);
+    // payload.append("description", formData.description);
+    // payload.append("category", formData.category);
+    // payload.append("ingredient", ingredient);
+    // payload.append("image", formData.image);
+
+    // const response = await fetch("http://localhost:3000/api/v1/recipe", {
+    //   method: "POST",
+    //   body: payload,
+    // });
+
+    // const data = await response.json();
   };
 
   return loading ? (

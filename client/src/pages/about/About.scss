@@ -10,7 +10,7 @@
 
     h1,
     h2 {
-      color: #41893d;
+      // color: #41893d;
     }
     .left {
       width: 40%;
@@ -74,9 +74,11 @@
 @include xsm {
   .about {
     height: 88vh;
+    // border: 1px solid;
     .container {
       flex-direction: column;
       padding: 0;
+      // border: 1px solid;
 
       .left {
         width: 100%;
@@ -92,11 +94,19 @@
         width: 100%;
         height: 60%;
         text-align: center;
-        padding: 2rem;
+        padding: 1rem 0rem;
+        margin-top: 1rem;
 
+        p{
+          margin: auto;
+        }
 
         strong{
             display: block;
+        }
+
+        .txt_wrap{
+          border: none;
         }
       }
     }

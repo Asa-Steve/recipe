@@ -33,9 +33,9 @@ const About = () => {
             <div className="txt_wrap">
               <h1>About Us</h1>
               <p>
-                Welcome to <em>theHotspot 🔥!</em> We believe that great food
-                brings people together, and we're here to make cooking easy,
-                fun, and accessible for everyone.
+                Welcome to <em>the Cooking Blog 🔥</em> We believe that great
+                food brings people together, and we're here to make cooking
+                easy, fun, and accessible for everyone.
               </p>
             </div>
             <div className="txt_wrap">

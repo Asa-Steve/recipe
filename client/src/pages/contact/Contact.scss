@@ -68,7 +68,6 @@
       width: 50%;
       display: flex;
       justify-content: center;
-
       .blob {
         // border: 1px solid;
         height: 40px;
@@ -215,13 +214,14 @@
 }
 @include xsm {
   .contact {
+    height: max-content;
     .container {
+      padding: 0;
       .form_section {
-
         .right {
           .blob {
             &:first-of-type {
-              right:50px;
+              right: 50px;
               top: 30px;
             }
 
@@ -237,6 +237,20 @@
             &:nth-of-type(4) {
               bottom: 40px;
               right: 0px;
+            }
+          }
+        }
+
+        .left {
+          padding: 1rem 0.5rem;
+          button {
+            width: 98%;
+          }
+
+          form {
+            input,
+            textarea {
+              width: 100%;
             }
           }
         }

@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <>
-      <header>
+      <header className={!toggle ? "fixed" : null}>
         <nav>
           <div className="logo">
             <Link to="/">
@@ -33,7 +33,9 @@ const Header = () => {
           </div>
 
           <div className="search_bar">
-            <input type="search" placeholder="search..." />
+            <form action="">
+              <input type="search" placeholder="search..." />
+            </form>
           </div>
         </nav>
         <nav className="mb_nav">

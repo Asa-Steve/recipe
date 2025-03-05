@@ -85,7 +85,7 @@ const Home = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev === 0 ? 1 : 0));
-    }, 30000);
+    }, 5000);
 
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, []);
@@ -165,68 +165,6 @@ const Home = () => {
             </div>
           )}
         </section>
-        {/* <section className="thai latest_recipes">
-        <div className="container">
-          <div className="top_wrap">
-            <h2>Thai Recipes</h2>
-            <Link>View more</Link>
-          </div>
-          <div className="recipes">
-            {recipes.map((recipe) => (
-              <Link key={recipe.id}>
-                <div className="recipe">
-                  <Card
-                    imgUrl={`../imgs/img/d1${recipe.id}.jpg`}
-                    imgName={recipe.name}
-                  />
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="american latest_recipes">
-        <div className="container">
-          <div className="top_wrap">
-            <h2>American Recipes</h2>
-            <Link>View more</Link>
-          </div>
-          <div className="recipes">
-            {latestRecipes.map((recipe, idx) => (
-              <Link key={recipe.id}>
-                <div className="recipe">
-                  <Card
-                    imgUrl={`../imgs/img/d${idx + 1}.jpg`}
-                    imgName={recipe.name}
-                  />
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mexican latest_recipes">
-        <div className="container">
-          <div className="top_wrap">
-            <h2>Mexican Recipes</h2>
-            <Link>View more</Link>
-          </div>
-          <div className="recipes">
-            {latestRecipes.map((recipe) => (
-              <Link key={recipe.id}>
-                <div className="recipe">
-                  <Card
-                    imgUrl={`../imgs/img/d2${recipe.id}.jpg`}
-                    imgName={recipe.name}
-                  />
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
         <section className="todo">
           <div className="container">
@@ -240,7 +178,7 @@ const Home = () => {
                 </p>
 
                 <div className="search">
-                  <form action="">
+                  <form action="" onSubmit={(e) => e.preventDefault()}>
                     <input type="search" name="" id="" />
                     <button>search</button>
                   </form>
